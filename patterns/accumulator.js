@@ -89,11 +89,9 @@ export function complementDNA(dna) {
   if(dna.length === 0) return ''
 
   let dnaNew = ''
-  for (let i=0; i < dna.length; i++) {
-    if(dna[i] === 'A') dnaNew += 'T'
-    else if(dna[i] === 'T') dnaNew += 'A'
-    else if(dna[i] === 'C') dnaNew += 'G'
-    else if(dna[i] === 'G') dnaNew += 'C'
+  const complements = {A: 'T', T: 'A', C: 'G', G: 'C'};
+  for (let i = 0; i < dna.length; i++) {
+    dnaNew += complements[dna[i]];
   }
   return dnaNew
 }
